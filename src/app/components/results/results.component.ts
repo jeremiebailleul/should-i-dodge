@@ -17,6 +17,6 @@ export class ResultsComponent implements OnInit {
   constructor(private _riotApiService: RiotApiService) { }
 
   ngOnInit() {
-    // this._riotApiService.fetchResults();
+    this._riotApiService.getSummonerByName(this.summonerNames[0]).subscribe(res => console.log(res));
   }
 }

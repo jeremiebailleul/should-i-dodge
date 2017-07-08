@@ -22,8 +22,8 @@ export class RiotApiService {
     Object.keys(environment.backend.endpoints).forEach(k => this._backendURL[k] = `${baseUrl}${environment.backend.endpoints[k]}`);
   }
 
-  getSummonerByName(): Observable<Object> {
-    return this._http.get(this._backendURL.getSummonerByName, this._options())
+  getSummonerByName(summonerName: string): Observable<Object> {
+    return this._http.get(this._backendURL.getSummonerByName + summonerName, this._options())
       .map((res: Response) => {
         if (res.status === 200) {
           return res.json();
