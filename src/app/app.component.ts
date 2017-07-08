@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild, ComponentRef} from '@angular/core';
+import { SearchComponent } from './components/search/search.component';
 
 @Component({
   selector: 'sid-app',
@@ -18,7 +19,6 @@ export class AppComponent {
     this.summonerNames = summonerNames;
     this.displaySearch = false;
     this.displayResults = true;
-    console.log(this.summonerNames);
   }
 
   newSearch() {

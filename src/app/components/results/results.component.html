@@ -1,16 +1,20 @@
 <div class="jumbotron container" style="padding-top: 15px;padding-bottom: 74px;">
   <div style="text-align: right;">
     <a class="btn btn-primary btn-lg btn-custom" (click)="newSearch()">
-      <span>Back</span>
       <i class="glyphicon glyphicon-remove" style="vertical-align: text-top;"></i>
     </a>
   </div>
   <div *ngIf="loading">
     <div class="loader" style="margin: auto"></div>
     <br/>
-    <div style="text-align: center;">
-      <span>Loading results...</span>
+    <div *ngIf="summonerNames === undefined || summonerNames.length === 0; else loading_results" style="text-align: center;">
+      <span>Wrong entry. Please try again to copy paste your champ selection chat.</span>
     </div>
+    <ng-template #loading_results>
+      <div style="text-align: center;">
+        <span>Loading results...</span>
+      </div>
+    </ng-template>
   </div>
   <div *ngIf="summoners.length !== 0" class="jumbotron container">
     <sid-player *ngFor="let summoner of summoners" [summoner]="summoner"></sid-player>
