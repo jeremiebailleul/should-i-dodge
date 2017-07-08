@@ -1,0 +1,22 @@
+.instructions {
+    margin-left: 24%;
+    font-style: italic;
+    font-size: 100%;
+}
+
+.textarea-custom-style {
+    width: 60%; 
+    margin-left: 40%;
+    resize: none;
+}
+
+.btn-custom {
+    margin-top: 35px;
+    background-color: darkslateblue;
+}
+
+.btn-custom:hover {
+    background-color: #41377e;
+}
+
+
