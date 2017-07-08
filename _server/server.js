@@ -4,7 +4,7 @@ var app = express();
 var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
 
 const BASEURL = "https://euw1.api.riotgames.com";
-const APIKEY = "api_key=4ca04903-88ab-43b3-8a44-0bc3a4ef1868";
+const APIKEY = "?api_key=RGAPI-1254c47e-138b-4b22-90c8-25f752c342f9";
 
 app.get('/lol/summoner/v3/summoners/by-name/*', function(req, res) {
     console.log(BASEURL + req.url + APIKEY);
