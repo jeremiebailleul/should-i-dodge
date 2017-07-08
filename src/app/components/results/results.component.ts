@@ -10,7 +10,7 @@ import { RiotApiService } from '../../services/riot-api.service';
 export class ResultsComponent implements OnInit {
 
   @Input() summonerNames;
-  
+
   loading = true;
 
   constructor(private _riotApiService: RiotApiService) { }

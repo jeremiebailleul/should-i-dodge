@@ -8,7 +8,7 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'Should I Dodge';
   slogan = 'See if you\'d better dodge the game based on your teammates information !'
-  
+
   displaySearch = true;
   displayResults = false;
 

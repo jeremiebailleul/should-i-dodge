@@ -27,22 +27,22 @@ export class SearchComponent implements OnInit {
   }
 
   parseRequestContent() {
-        var summonerNames: string[] = [];
-        
-        if(this.champselectChat == undefined)
-            return;
-        
-        var lines: string[] = this.champselectChat.split('\n');
-        for(var i = 0; i < lines.length; i++){
-            
-            if(lines[i].search("joined the lobby") == -1){
-                continue;
-            }
-            if(lines[i] != ''){
-                summonerNames.push(lines[i].replace(" joined the lobby", ''));
-            }
-        }
-        this.summonerNames = summonerNames.sort();
+    var summonerNames: string[] = [];
+
+    if (this.champselectChat == undefined)
+      return;
+
+    var lines: string[] = this.champselectChat.split('\n');
+    for (var i = 0; i < lines.length; i++) {
+
+      if (lines[i].search("joined the lobby") == -1) {
+        continue;
+      }
+      if (lines[i] != '') {
+        summonerNames.push(lines[i].replace(" joined the lobby", ''));
+      }
     }
+    this.summonerNames = summonerNames.sort();
+  }
 
 }

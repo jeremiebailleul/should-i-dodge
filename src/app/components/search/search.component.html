@@ -1,32 +1,13 @@
 <div class="jumbotron container">
   <p class="instructions">{{ instructions }}</p>
   <div>
-    <form #f="ngForm" (ngSubmit)="onSubmit()">
-      <div class="form-group">
-        <div>
-          <div class="col-lg-7">
-            <textarea 
-              id="champselectChatContent" 
-              class="form-control textarea-custom-style" 
-              cols="10" rows="5" 
-              placeholder="{{ placeholder }}" 
-              required
-              [(ngModel)]="champselectChat" name="champselectChatContent"
-              #content="ngModel"
-              pattern="[a-zA-Z0-9 ]{1,18}\sjoined the lobby\n[a-zA-Z0-9 ]{1,18}\sjoined the lobby\n[a-zA-Z0-9 ]{1,18}\sjoined the lobby\n[a-zA-Z0-9 ]{1,18}\sjoined the lobby\n[a-zA-Z0-9 ]{1,18}\sjoined the lobby">
-            </textarea>
-          </div>
-          <div class="col-lg-5">
-            <a class="btn btn-primary btn-lg btn-custom" (click)="search()">Should I Dodge</a>
-          </div>
-        </div>
-      </div>
-      <div class="container">
-        <div *ngIf="!content.valid && content.dirty"
-                class="alert alert-danger">
-                Wrong entry. Please copy your champ select chat with Ctrl+C and paste it with Ctrl+V in the area.
-        </div>
-      </div>
-    </form>
+    <div class="col-lg-7">
+      <textarea id="champselectChatContent" class="form-control textarea-custom-style" cols="10" rows="5" placeholder="{{ placeholder }}"
+        [(ngModel)]="champselectChat" #content="ngModel">
+      </textarea>
+    </div>
+    <div class="col-lg-5">
+      <a class="btn btn-primary btn-lg btn-custom" (click)="search()">Should I Dodge</a>
+    </div>
   </div>
 </div>
