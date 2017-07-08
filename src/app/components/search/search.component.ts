@@ -7,8 +7,9 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 })
 export class SearchComponent implements OnInit {
 
-  instructions = 'Paste your champion selection chat in the area below :'
-  placeholder = `SKT T1 Huni joined the lobby\nSKT T1 Peanut joined the lobby\nSKT T1 Faker joined the lobby\nSKT T1 Bang joined the lobby\nSKT T1 Wolf joined the lobby`
+  instructions = 'Paste your champion selection chat in the area below :';
+  placeholder = 'SKT T1 Huni joined the lobby\nSKT T1 Peanut joined the lobby\nSKT T1 Faker joined the lobby\n' +
+    'SKT T1 Bang joined the lobby\nSKT T1 Wolf joined the lobby';
 
   champselectChat;
 
@@ -27,19 +28,20 @@ export class SearchComponent implements OnInit {
   }
 
   parseRequestContent() {
-    var summonerNames: string[] = [];
+    const summonerNames: string[] = [];
 
-    if (this.champselectChat == undefined)
+    if (this.champselectChat === undefined) {
       return;
+    }
 
-    var lines: string[] = this.champselectChat.split('\n');
-    for (var i = 0; i < lines.length; i++) {
+    const lines: string[] = this.champselectChat.split('\n');
+    for (let i = 0; i < lines.length; i++) {
 
-      if (lines[i].search("joined the lobby") == -1) {
+      if (lines[i].search('joined the lobby') === -1) {
         continue;
       }
-      if (lines[i] != '') {
-        summonerNames.push(lines[i].replace(" joined the lobby", ''));
+      if (lines[i] !== '') {
+        summonerNames.push(lines[i].replace(' joined the lobby', ''));
       }
     }
     this.summonerNames = summonerNames.sort();
