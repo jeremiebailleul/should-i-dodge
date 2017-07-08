@@ -5,3 +5,6 @@
     <span>Loading results...</span>
   </div>
 </div>
+<div *ngIf="summonerNames.length !== 0" class="jumbotron container">
+  <sid-player *ngFor="let summoner of summoners" [summoner]="summoner"></sid-player>
+</div>

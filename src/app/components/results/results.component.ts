@@ -12,6 +12,7 @@ export class ResultsComponent implements OnInit {
   @Input() summonerNames;
 
   loading = true;
+  resultsFetched = false;
 
   constructor(private _riotApiService: RiotApiService) { }
 
