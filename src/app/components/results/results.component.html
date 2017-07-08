@@ -1,6 +1,9 @@
-<div class="jumbotron container" style="padding-top: 15px;padding-bottom: 23px;">
+<div class="jumbotron container" style="padding-top: 15px;padding-bottom: 74px;">
   <div style="text-align: right;">
-    <i class="glyphicon glyphicon-remove" (click)="newSearch()"></i>
+    <a class="btn btn-primary btn-lg btn-custom" (click)="newSearch()">
+      <span>Back</span>
+      <i class="glyphicon glyphicon-remove" style="vertical-align: text-top;"></i>
+    </a>
   </div>
   <div *ngIf="loading">
     <div class="loader" style="margin: auto"></div>

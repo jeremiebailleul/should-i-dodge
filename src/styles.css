@@ -4,3 +4,11 @@
 .jumbotron{
     opacity: 0.9;
 }
+
+.btn-custom {
+  background-color: darkslateblue;
+}
+
+.btn-custom:hover {
+  background-color: #41377e;
+}
