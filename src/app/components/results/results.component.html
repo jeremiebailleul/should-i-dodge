@@ -1,10 +1,16 @@
-<div *ngIf="loading" class="jumbotron container">
-  <div class="loader" style="margin: auto"></div>
-  <br/>
-  <div style="text-align: center;">
-    <span>Loading results...</span>
+<div class="jumbotron container" style="padding-top: 15px;padding-bottom: 23px;">
+  <div style="text-align: right;">
+    <i class="glyphicon glyphicon-remove" (click)="newSearch()"></i>
+  </div>
+  <div *ngIf="loading">
+    <div class="loader" style="margin: auto"></div>
+    <br/>
+    <div style="text-align: center;">
+      <span>Loading results...</span>
+    </div>
+  </div>
+  <div *ngIf="summoners.length !== 0" class="jumbotron container">
+    <sid-player *ngFor="let summoner of summoners" [summoner]="summoner"></sid-player>
   </div>
 </div>
-<div *ngIf="summonerNames.length !== 0" class="jumbotron container">
-  <sid-player *ngFor="let summoner of summoners" [summoner]="summoner"></sid-player>
-</div>
+

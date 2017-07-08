@@ -14,14 +14,16 @@ export class AppComponent {
 
   summonerNames;
 
-  loadSearchComponent() {
-    this.displaySearch = true;
-  }
-
   loadResultsComponent(summonerNames) {
     this.summonerNames = summonerNames;
     this.displaySearch = false;
     this.displayResults = true;
     console.log(this.summonerNames);
+  }
+
+  newSearch() {
+    this.displaySearch = true;
+    this.displayResults = false;
+    this.summonerNames = [];
   }
 }

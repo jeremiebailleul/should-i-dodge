@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 import { RiotApiService } from '../../services/riot-api.service';
 
@@ -10,6 +10,9 @@ import { RiotApiService } from '../../services/riot-api.service';
 export class ResultsComponent implements OnInit {
 
   @Input() summonerNames;
+  @Output() newSearchEvt = new EventEmitter<boolean>();
+
+  summoners = [];
 
   loading = true;
   resultsFetched = false;
@@ -18,5 +21,12 @@ export class ResultsComponent implements OnInit {
 
   ngOnInit() {
     this._riotApiService.getSummonerByName(this.summonerNames[0]).subscribe(res => console.log(res));
+  }
+
+  newSearch() {
+    this.loading = false;
+    this.resultsFetched = false;
+    this.summoners = [];
+    this.newSearchEvt.emit(true);
   }
 }

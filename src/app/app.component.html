@@ -5,4 +5,4 @@
 </div>
 
 <sid-search *ngIf="displaySearch" (loadResults)="loadResultsComponent($event)"></sid-search>
-<sid-results *ngIf="displayResults" [summonerNames]="summonerNames"></sid-results>
+<sid-results *ngIf="displayResults" [summonerNames]="summonerNames" (newSearchEvt)="newSearch()"></sid-results>
