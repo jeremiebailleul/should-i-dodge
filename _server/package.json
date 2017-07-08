@@ -4,6 +4,7 @@
   "version": "0.0.1",
   "private": true,
   "dependencies": {
+    "cors": "^2.8.3",
     "express": "3.x",
     "http-module": "0.0.5",
     "xmlhttprequest": "^1.8.0"

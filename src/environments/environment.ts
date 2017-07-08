@@ -7,10 +7,10 @@ export const environment = {
   production: false,
   backend: {
     protocol: 'http',
-    host: '127.0.0.1',
+    host: 'localhost',
     port: '3001',
     endpoints: {
-      getSummonerByName: '/lol/summoner/v3/summoners/by-name/*'
+      getSummonerByName: '/lol/summoner/v3/summoners/by-name/'
     }
   }
 };

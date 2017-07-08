@@ -11,7 +11,7 @@ export class SearchComponent implements OnInit {
   placeholder = 'SKT T1 Huni joined the lobby\nSKT T1 Peanut joined the lobby\nSKT T1 Faker joined the lobby\n' +
     'SKT T1 Bang joined the lobby\nSKT T1 Wolf joined the lobby';
 
-  champselectChat;
+  champselectChat = 'Meskalyn joined the lobby';
 
   summonerNames: string[];
 
