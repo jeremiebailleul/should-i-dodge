@@ -4,7 +4,7 @@
       <i class="glyphicon glyphicon-remove" style="vertical-align: text-top;"></i>
     </a>
   </div>
-  <div *ngIf="loading && resultsFetched < this.summoners.length">
+  <div *ngIf="loading && (resultsFetched < this.summoners.length)">
     <div class="loader" style="margin: auto"></div>
     <br/>
     <div *ngIf="summonerNames === undefined || summonerNames.length === 0; else loading_results" style="text-align: center;">
