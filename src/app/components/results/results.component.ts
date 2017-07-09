@@ -36,4 +36,9 @@ export class ResultsComponent implements OnInit {
     this.summoners = [];
     this.newSearchEvt.emit(true);
   }
+
+  loaded() {
+    this.resultsFetched += 1;
+    this.loading = this.resultsFetched < this.summoners.length;
+  }
 }
