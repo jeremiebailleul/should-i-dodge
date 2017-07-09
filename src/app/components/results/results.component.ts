@@ -1,6 +1,7 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 import { RiotApiService } from '../../services/riot-api.service';
+import {Observable} from 'rxjs/Observable';
 
 @Component({
   selector: 'sid-results',
@@ -15,19 +16,23 @@ export class ResultsComponent implements OnInit {
   summoners = [];
 
   loading = true;
-  resultsFetched = false;
+  resultsFetched = 0;
 
   constructor(private _riotApiService: RiotApiService) { }
 
   ngOnInit() {
-    if (this.summonerNames !== undefined && this.summonerNames.length > 0) {
-      this._riotApiService.getSummonerByName(this.summonerNames[0]).subscribe(res => console.log(res));
+    if (this.summonerNames) {
+      this.summonerNames
+        .forEach(summonerName => this._riotApiService.getSummonerByName(summonerName)
+        .subscribe(res => {
+          this.summoners.push(res);
+        }));
     }
   }
 
-  newSearch() {
+  reset() {
     this.loading = false;
-    this.resultsFetched = false;
+    this.resultsFetched = 0;
     this.summoners = [];
     this.newSearchEvt.emit(true);
   }

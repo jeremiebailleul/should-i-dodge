@@ -1,4 +1,5 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { RiotApiService } from '../../../services/riot-api.service';
 
 @Component({
   selector: 'sid-player',
@@ -8,10 +9,17 @@ import { Component, OnInit, Input } from '@angular/core';
 export class PlayerComponent implements OnInit {
 
   @Input() summoner;
+  @Output() loaded = new EventEmitter<boolean>();
 
-  constructor() { }
+  constructor(private _riotApiService: RiotApiService) { }
 
   ngOnInit() {
+    console.log(this.summoner);
+    this._riotApiService.getProfileIconsVersion().subscribe(res => {
+      this.summoner.profileIconUrl = 'http://ddragon.leagueoflegends.com/cdn/'
+        + res + '/img/profileicon/'
+        + this.summoner.profileIconId + '.png';
+      this.loaded.emit(true);
+    });
   }
-
 }

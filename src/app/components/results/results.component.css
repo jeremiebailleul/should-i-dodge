@@ -11,3 +11,18 @@
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
 }
+
+.collapsed-search {
+  width: 75px;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 9px;
+  padding-bottom: 50px;
+  height: 65px;
+  margin-right: 3.8%;
+}
+
+.expanded-search {
+  padding-top: 15px;
+  padding-bottom: 74px;
+}

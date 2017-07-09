@@ -10,7 +10,8 @@ export const environment = {
     host: 'localhost',
     port: '3001',
     endpoints: {
-      getSummonerByName: '/lol/summoner/v3/summoners/by-name/'
+      getSummonerByName: '/lol/summoner/v3/summoners/by-name/',
+      getProfileIconsVersion : '/lol/static-data/v3/profile-icons'
     }
   }
 };

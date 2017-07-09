@@ -33,6 +33,11 @@ export class RiotApiService {
       });
   }
 
+  getProfileIconsVersion() {
+    return this._http.get(this._backendURL.getProfileIconsVersion, this._options())
+      .map(res => res.json().version);
+  }
+
   private _options(headerList: Object = {}): RequestOptions {
     const headers = new Headers(Object.assign({ 'Content-Type': 'application/json' }, headerList));
     return new RequestOptions({ headers: headers });

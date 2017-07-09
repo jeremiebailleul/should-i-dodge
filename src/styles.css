@@ -12,3 +12,7 @@
 .btn-custom:hover {
   background-color: #41377e;
 }
+
+* {
+  border-radius: 10px;
+}

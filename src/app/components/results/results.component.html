@@ -1,10 +1,10 @@
-<div class="jumbotron container" style="padding-top: 15px;padding-bottom: 74px;">
+<div class="jumbotron container" [ngClass]="{'collapsed-search': resultsFetched === this.summoners.length, 'expanded-search': resultsFetched !== this.summoners.length}">
   <div style="text-align: right;">
-    <a class="btn btn-primary btn-lg btn-custom" (click)="newSearch()">
+    <a class="btn btn-primary btn-lg btn-custom" (click)="reset()">
       <i class="glyphicon glyphicon-remove" style="vertical-align: text-top;"></i>
     </a>
   </div>
-  <div *ngIf="loading">
+  <div *ngIf="loading && resultsFetched < this.summoners.length">
     <div class="loader" style="margin: auto"></div>
     <br/>
     <div *ngIf="summonerNames === undefined || summonerNames.length === 0; else loading_results" style="text-align: center;">
@@ -16,8 +16,8 @@
       </div>
     </ng-template>
   </div>
-  <div *ngIf="summoners.length !== 0" class="jumbotron container">
-    <sid-player *ngFor="let summoner of summoners" [summoner]="summoner"></sid-player>
-  </div>
+</div>
+<div *ngIf="summoners.length !== 0">
+  <sid-player *ngFor="let summoner of summoners" [summoner]="summoner" (loaded)="loaded()"></sid-player>
 </div>
 
