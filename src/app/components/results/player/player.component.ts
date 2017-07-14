@@ -25,22 +25,26 @@ export class PlayerComponent implements OnInit {
       this.summoner.profileIconUrl = 'http://ddragon.leagueoflegends.com/cdn/'
         + res + '/img/profileicon/'
         + this.player.profileIconId + '.png';
-      this.loaded.emit(true);
     }).subscribe(() => {
       this._riotApiService.getLeague(this.player.summonerId)
         .map(x => {
-          console.log(x);
+          // console.log(x);
           this.getLeagueForSummoner(x);
         })
-        .subscribe();
+        .subscribe(() => this.loaded.emit(true));
+      this._riotApiService.getMatchlist(this.player.accountId)
+        .subscribe(matches => {
+          matches.forEach(match => this._riotApiService.getMatch(match.gameId)
+            .subscribe(x => console.log(x)))
+        });
       });
   }
 
   getLeagueForSummoner(league) {
-    for (let l of league) {
+    for (const l of league) {
       if (l.queue === 'RANKED_SOLO_5x5') {
         this.player.tier = l.tier;
-        for (let entry of l.entries) {
+        for (const entry of l.entries) {
           if (entry.playerOrTeamId == this.player.summonerId) {
             this.player.rank = entry.rank;
             this.player.wins = entry.wins;

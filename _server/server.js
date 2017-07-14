@@ -37,12 +37,13 @@ app.get('/lol/league/v3/leagues/by-summoner/*', function(req, res){
 });
 
 app.get('/lol/match/v3/matchlists/by-account/*', function(req, res) {
-    console.log(BASEURL + req.url + APIKEY);
-  res.send(httpGet(BASEURL + req.url + APIKEY));
+    console.log(BASEURL + req.url + '?queue=420&' + APIKEY);
+  res.send(httpGet(BASEURL + req.url + '?queue=420&' + APIKEY));
 });
 
 app.get('/lol/match/v3/matches/*', function(req, res) {
-  res.send(httpGet(BASEURL + req.url + APIKEY));
+  console.log(BASEURL + req.url + '?' + APIKEY);
+  res.send(httpGet(BASEURL + req.url + '?' + APIKEY));
 });
 
 

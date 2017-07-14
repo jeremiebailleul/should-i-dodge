@@ -43,6 +43,16 @@ export class RiotApiService {
       .map(res => res.json());
   }
 
+  getMatchlist(accountId: number) {
+    return this._http.get(this._backendURL.getMatchlist + accountId, this._options())
+      .map(res => res.json().matches.slice(0, 10));
+  }
+
+  getMatch(matchId: number) {
+    return this._http.get(this._backendURL.getMatch + matchId, this._options())
+      .map(res => res.json());
+  }
+
   private _options(headerList: Object = {}): RequestOptions {
     const headers = new Headers(Object.assign({ 'Content-Type': 'application/json' }, headerList));
     return new RequestOptions({ headers: headers });

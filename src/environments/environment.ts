@@ -12,7 +12,9 @@ export const environment = {
     endpoints: {
       getSummonerByName: '/lol/summoner/v3/summoners/by-name/',
       getProfileIconsVersion : '/lol/static-data/v3/profile-icons',
-      getLeague: '/lol/league/v3/leagues/by-summoner/'
+      getLeague: '/lol/league/v3/leagues/by-summoner/',
+      getMatchlist: '/lol/match/v3/matchlists/by-account/',
+      getMatch: '/lol/match/v3/matches/'
     }
   }
 };
