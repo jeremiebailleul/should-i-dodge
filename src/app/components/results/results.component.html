@@ -1,8 +1,7 @@
 <div class="jumbotron container" [ngClass]="{'collapsed-search': resultsFetched === this.summoners.length, 'expanded-search': resultsFetched !== this.summoners.length}">
   <div>
     <div class="col-md-4" style="text-align: left;">
-      <h4 style="margin-top: 5px;margin-bottom: 0px;" (click)="reset()">Should I Dodge</h4>
-      <div class="vertical-divider"></div>
+      <h4 style="margin-top: 5px;margin-bottom: 0px;">Should I Dodge</h4>
     </div>
     <div class="col-md-4">
       <div *ngIf="loading && (resultsFetched < this.summoners.length)">
@@ -12,12 +11,8 @@
         </div>
       </div>
     </div>
-    <div class="col-md-3">
-    </div>
-    <div class="col-md-1" style="text-align: right;">
-      <a class="btn btn-primary btn-sm btn-custom" (click)="reset()">
-        <i class="glyphicon glyphicon-triangle-bottom" style="vertical-align: text-top;"></i>
-      </a>
+    <div class="col-md-4" style="text-align: right;">
+      <a class="btn btn-primary btn-sm btn-custom" (click)="reset()">New search <i class="glyphicon glyphicon-search" style="vertical-align: text-top;"></i></a>
     </div>
   </div>
 </div>
