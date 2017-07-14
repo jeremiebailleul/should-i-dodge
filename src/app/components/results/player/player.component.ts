@@ -17,6 +17,7 @@ export class PlayerComponent implements OnInit {
 
   ngOnInit() {
     this.player = new Player();
+    this.player.accountId = this.summoner.accountId;
     this.player.summonerId = this.summoner.id;
     this.player.name = this.summoner.name;
     this.player.profileIconId = this.summoner.profileIconId;

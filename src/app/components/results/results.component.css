@@ -1,9 +1,9 @@
 .loader {
-  border: 10px solid #9b95bf;
-  border-top: 10px solid darkslateblue;
+  border: 6px solid #9b95bf;
+  border-top: 6px solid darkslateblue;
   border-radius: 50%;
-  width: 70px;
-  height: 70px;
+  width: 30px;
+  height: 30px;
   animation: spin 0.5s linear infinite;
 }
 
@@ -13,16 +13,13 @@
 }
 
 .collapsed-search {
-  width: 75px;
-  padding-left: 12px;
-  padding-right: 12px;
-  padding-top: 9px;
-  padding-bottom: 50px;
-  height: 65px;
-  margin-right: 3.8%;
+  padding: 12px;
 }
 
 .expanded-search {
-  padding-top: 15px;
-  padding-bottom: 74px;
+  padding: 12px;
 }
+
+h4:hover {
+  cursor: pointer;
+} 

@@ -1,4 +1,5 @@
 export class Player {
+  accountId: number;
   summonerId: number;
   profileIconId: number;
   name: string;

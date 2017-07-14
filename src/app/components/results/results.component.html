@@ -1,20 +1,24 @@
 <div class="jumbotron container" [ngClass]="{'collapsed-search': resultsFetched === this.summoners.length, 'expanded-search': resultsFetched !== this.summoners.length}">
-  <div style="text-align: right;">
-    <a class="btn btn-primary btn-lg btn-custom" (click)="reset()">
-      <i class="glyphicon glyphicon-remove" style="vertical-align: text-top;"></i>
-    </a>
-  </div>
-  <div *ngIf="loading && (resultsFetched < this.summoners.length)">
-    <div class="loader" style="margin: auto"></div>
-    <br/>
-    <div *ngIf="summonerNames === undefined || summonerNames.length === 0; else loading_results" style="text-align: center;">
-      <span>Wrong entry. Please try again to copy paste your champ selection chat.</span>
+  <div>
+    <div class="col-md-4" style="text-align: left;">
+      <h4 style="margin-top: 5px;margin-bottom: 0px;" (click)="reset()">Should I Dodge</h4>
+      <div class="vertical-divider"></div>
     </div>
-    <ng-template #loading_results>
-      <div style="text-align: center;">
-        <span>Loading results...</span>
+    <div class="col-md-4">
+      <div *ngIf="loading && (resultsFetched < this.summoners.length)">
+        <div class="loader" style="margin: auto"></div>
+        <div *ngIf="summonerNames === undefined || summonerNames.length === 0" style="text-align: center;">
+          <span>Wrong entry. Please try again to copy paste your champ selection chat.</span>
+        </div>
       </div>
-    </ng-template>
+    </div>
+    <div class="col-md-3">
+    </div>
+    <div class="col-md-1" style="text-align: right;">
+      <a class="btn btn-primary btn-sm btn-custom" (click)="reset()">
+        <i class="glyphicon glyphicon-triangle-bottom" style="vertical-align: text-top;"></i>
+      </a>
+    </div>
   </div>
 </div>
 <div *ngIf="summoners.length !== 0">
