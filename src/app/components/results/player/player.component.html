@@ -3,9 +3,17 @@
     <div class="col-md-4">
       <img *ngIf="summoner.profileIconUrl" [src]="summoner.profileIconUrl" width="75" height="75">
     </div>
-    <div class="col-md-4">
+    <div class="col-md-8">
       <h4>{{player.name}}</h4>
-      <span>{{player.tier}}</span> <span>{{player.rank}}</span>
+      <div>
+        <span>{{player.tier}}</span> <span>{{player.rank}}</span>
+      </div>
+      <div>
+        <span>{{player.wins}}</span> W / L <span>{{player.losses}}</span>
+      </div>
+      <div>
+        <span>{{player.leaguePoints}} LP</span>
+      </div>
     </div>
   </div>
   <div class="col-md-9">

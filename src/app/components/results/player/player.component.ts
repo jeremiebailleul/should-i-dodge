@@ -28,6 +28,7 @@ export class PlayerComponent implements OnInit {
     }).subscribe(() => {
       this._riotApiService.getLeague(this.player.summonerId)
         .map(x => {
+          console.log(x);
           this.getLeagueForSummoner(x);
         })
         .subscribe();
@@ -41,6 +42,9 @@ export class PlayerComponent implements OnInit {
         for (let entry of l.entries) {
           if (entry.playerOrTeamId == this.player.summonerId) {
             this.player.rank = entry.rank;
+            this.player.wins = entry.wins;
+            this.player.losses = entry.losses;
+            this.player.leaguePoints = entry.leaguePoints;
           }
         }
       }
