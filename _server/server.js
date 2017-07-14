@@ -5,7 +5,7 @@ var cors = require('cors');
 var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
 
 const BASEURL = "https://euw1.api.riotgames.com";
-const APIKEY = "api_key=RGAPI-888f80d9-5bf5-4589-a82c-847f5a9735c9";
+const APIKEY = "api_key=RGAPI-c10f06db-2ba7-4471-bf94-0f4efd94d32a";
 
 var originsWhitelist = [
   'http://localhost:4200'      //this is my front-end url for development
@@ -29,6 +29,11 @@ app.get('/lol/summoner/v3/summoners/by-name/*', function(req, res) {
 app.get('/lol/static-data/v3/profile-icons', function(req, res) {
   console.log(BASEURL + req.url + APIKEY);
   res.send(httpGet(BASEURL + req.url + '?locale=en_US&' + APIKEY));
+});
+
+app.get('/lol/league/v3/leagues/by-summoner/*', function(req, res){
+  console.log(BASEURL + req.url + '?' + APIKEY);
+  res.send(httpGet(BASEURL + req.url + '?' + APIKEY));
 });
 
 app.get('/lol/match/v3/matchlists/by-account/*', function(req, res) {

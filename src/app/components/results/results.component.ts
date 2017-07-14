@@ -24,9 +24,7 @@ export class ResultsComponent implements OnInit {
     if (this.summonerNames) {
       this.summonerNames
         .forEach(summonerName => this._riotApiService.getSummonerByName(summonerName)
-        .subscribe(res => {
-          this.summoners.push(res);
-        }));
+          .subscribe(res => this.summoners.push(res)));
     }
   }
 

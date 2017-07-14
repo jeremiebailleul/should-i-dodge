@@ -38,6 +38,11 @@ export class RiotApiService {
       .map(res => res.json().version);
   }
 
+  getLeague(summonerId: any) {
+    return this._http.get(this._backendURL.getLeague + summonerId, this._options())
+      .map(res => res.json());
+  }
+
   private _options(headerList: Object = {}): RequestOptions {
     const headers = new Headers(Object.assign({ 'Content-Type': 'application/json' }, headerList));
     return new RequestOptions({ headers: headers });

@@ -11,7 +11,8 @@ export const environment = {
     port: '3001',
     endpoints: {
       getSummonerByName: '/lol/summoner/v3/summoners/by-name/',
-      getProfileIconsVersion : '/lol/static-data/v3/profile-icons'
+      getProfileIconsVersion : '/lol/static-data/v3/profile-icons',
+      getLeague: '/lol/league/v3/leagues/by-summoner/'
     }
   }
 };
